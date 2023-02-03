@@ -1,16 +1,16 @@
-add_executable(freeride_test)
+add_executable(light_test)
 
-file(GLOB_RECURSE FREERIDE_TESTS_INCLUDE *.hpp)
-file(GLOB_RECURSE FREERIDE_TESTS_SOURCE *.cpp)
+file(GLOB_RECURSE LIGHT_TESTS_INCLUDE *.hpp)
+file(GLOB_RECURSE LIGHT_TESTS_SOURCE *.cpp)
 
-target_sources(freeride_test
+target_sources(light_test
     PUBLIC
-        ${FREERIDE_TESTS_INCLUDE}
+        ${LIGHT_TESTS_INCLUDE}
     PRIVATE
-        ${FREERIDE_TESTS_SOURCE}
+        ${LIGHT_TESTS_SOURCE}
     )
 
-target_link_libraries(freeride_test
+target_link_libraries(light_test
     PUBLIC
-        freeride
+        light
     )

@@ -1,13 +1,13 @@
-#include <freeride/detail/mmap.hpp>
+#include <light/detail/mmap.hpp>
 
 #include <sys/mman.h>
 
-namespace freeride {
+namespace light {
 
 namespace detail {
 
 void* Map(SizeType bytes) {
-  return mmap(nullptr, bytes, PROT_READ | PROT_WRITE, MAP_PRIVATE, 0, 0);
+  return mmap(nullptr, bytes, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 }
 
 void Unmap(void* data, SizeType bytes) {
@@ -16,4 +16,4 @@ void Unmap(void* data, SizeType bytes) {
 
 }  // namespace detail
 
-}  // namespace freeride
+}  // namespace light

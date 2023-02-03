@@ -1,16 +1,16 @@
-#include <freeride/detail/mmap.hpp>
-#include <freeride/detail/stack_base.hpp>
+#include <light/detail/mmap.hpp>
+#include <light/detail/stack_base.hpp>
 
-namespace freeride {
+namespace light {
 
 namespace detail {
 
-StackBase::StackBase(SizeType pages) noexcept 
+StackBase::StackBase(SizeType pages) noexcept
     : data_{Map(pages * kPageSize)},
       bytes_{pages * kPageSize} {
 }
 
-StackBase::StackBase(StackBase&& other) noexcept 
+StackBase::StackBase(StackBase&& other) noexcept
     : data_{other.data_},
       bytes_{other.bytes_} {
   other.data_ = nullptr;
@@ -40,4 +40,4 @@ void StackBase::Swap(StackBase& other) noexcept {
 
 }  // namespace detail
 
-}  // namespace freeride
+}  // namespace light

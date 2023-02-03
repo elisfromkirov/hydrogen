@@ -1,16 +1,18 @@
-add_library(freeride)
+add_library(light)
 
-file(GLOB_RECURSE FREERIDE_INCLUDE *.hpp)
-file(GLOB_RECURSE FREERIDE_SOURCE *.cpp)
+file(GLOB_RECURSE LIGHT_INCLUDE *.hpp)
+file(GLOB_RECURSE LIGHT_SOURCE *.cpp)
+file(GLOB_RECURSE LIGHT_ASSEMBLY *.s)
 
-target_include_directories(freeride
+target_include_directories(light
     PUBLIC
         .
     )
 
-target_sources(freeride
+target_sources(light
     PUBLIC
-        ${FREERIDE_INCLUDE}
+        ${LIGHT_INCLUDE}
     PRIVATE
-        ${FREERIDE_SOURCE}
+        ${LIGHT_SOURCE}
+        ${LIGHT_ASSEMBLY}
     )

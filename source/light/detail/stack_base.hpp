@@ -1,8 +1,8 @@
 #pragma once
 
-#include <freeride/core.hpp>
+#include <light/core.hpp>
 
-namespace freeride {
+namespace light {
 
 namespace detail {
 
@@ -11,7 +11,7 @@ class StackBase {
   static constexpr SizeType kPageSize = 4096;
 
  public:
-  StackBase(SizeType pages) noexcept;
+  explicit StackBase(SizeType pages) noexcept;
 
   StackBase(const StackBase& other) = delete;
   StackBase& operator=(const StackBase& other) = delete;
@@ -31,4 +31,4 @@ class StackBase {
 
 }  // namespace detail
 
-}  // namespace freeride
+}  // namespace light

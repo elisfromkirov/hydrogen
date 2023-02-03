@@ -1,8 +1,8 @@
 #pragma once
 
-#include <freeride/core.hpp>
+#include <light/core.hpp>
 
-namespace freeride {
+namespace light {
 
 namespace detail {
 
@@ -12,4 +12,4 @@ void Unmap(void* data, SizeType bytes);
 
 }  // namespace detail
 
-}  // namespace freeride
+}  // namespace light
