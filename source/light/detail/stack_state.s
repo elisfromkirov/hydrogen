@@ -20,6 +20,12 @@ _SetupStackState:
   # now rsp stores address of stack
   # now rcx stores address of thread stack
 
+  # align and down rsp
+
+  subq $128, %rsp
+  andq $-16, %rsp
+  addq $8, %rsp
+
   # setup stack
 
   pushq %rdx
@@ -63,7 +69,7 @@ _SetupStackState:
   .globl _SwitchStackState
 _SwitchStackState:
   # rdi stores address of current stack state structure
-  # rsi stores address of target stack state strucutre
+  # rsi stores address of target stack state structure
 
   # store callee saved registers
 
