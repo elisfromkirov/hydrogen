@@ -8,7 +8,10 @@ namespace hydrogen {
 
 class Stack final : private detail::StackBase {
  public:
-  explicit Stack(crutch::SizeType pages) noexcept;
+  static constexpr crutch::SizeType kDefaultPages = 16;
+
+ public:
+  explicit Stack(crutch::SizeType pages = kDefaultPages) noexcept;
 
   [[nodiscard]]
   void* Top() const noexcept;

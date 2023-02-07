@@ -30,7 +30,7 @@ void YieldInjector::Update() noexcept {
 }
 
 void YieldInjector::Reset() noexcept {
-  until_yield_ = Random() % yield_frequency;
+  until_yield_ = Random() % kYieldFrequency;
 }
 
 void YieldInjector::Inject() noexcept {

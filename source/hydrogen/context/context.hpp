@@ -7,13 +7,13 @@
 
 namespace hydrogen {
 
-class ExecutionContext {
+class Context {
  public:
-  ExecutionContext() noexcept;
+  Context() noexcept;
 
-  ExecutionContext(Stack& stack, ILandingPad* landing_pad) noexcept;
+  Context(Stack& stack, ILandingPad* landing_pad) noexcept;
 
-  void SwitchTo(ExecutionContext& context) noexcept;
+  void SwitchTo(Context& context) noexcept;
 
  private:
   StackState state_;

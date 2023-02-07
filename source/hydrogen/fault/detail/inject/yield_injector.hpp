@@ -10,7 +10,7 @@ namespace detail {
 
 class YieldInjector : public IInjector {
  public:
-  static constexpr unsigned int yield_frequency = 15;
+  static constexpr unsigned int kYieldFrequency = 15;
 
  public:
   YieldInjector() noexcept;
