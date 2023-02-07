@@ -1,6 +1,6 @@
-#include <light/execution_context.hpp>
-#include <light/landing_pad.hpp>
-#include <light/stack.hpp>
+#include <hydrogen/context/execution_context.hpp>
+#include <hydrogen/context/landing_pad.hpp>
+#include <hydrogen/context/stack.hpp>
 
 #include <iostream>
 
@@ -14,7 +14,7 @@ class Exception {
   }
 };
 
-class Routine : private light::ILandingPad {
+class Routine : private hydrogen::ILandingPad {
  public:
   Routine()
       : stack_{16},
@@ -44,9 +44,9 @@ class Routine : private light::ILandingPad {
   }
 
  private:
-  light::Stack stack_;
-  light::ExecutionContext context_;
-  light::ExecutionContext external_context_;
+  hydrogen::Stack stack_;
+  hydrogen::ExecutionContext context_;
+  hydrogen::ExecutionContext external_context_;
   std::exception_ptr exception_ptr_;
 };
 

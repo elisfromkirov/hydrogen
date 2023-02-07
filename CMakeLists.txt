@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(crutch CXX ASM)
+project(hydrogen CXX ASM)
 
 set(CMAKE_CXX_STANDARD 20)
 

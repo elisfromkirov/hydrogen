@@ -1,6 +1,6 @@
 #pragma once
 
-namespace light {
+namespace hydrogen {
 
 class ILandingPad {
  public:
@@ -9,4 +9,4 @@ class ILandingPad {
   virtual void Land() = 0;
 };
 
-}  // namespace light
+}  // namespace hydrogen

@@ -1,11 +1,11 @@
 #pragma once
 
-#include <light/landing_pad.hpp>
-#include <light/stack.hpp>
+#include <hydrogen/context/landing_pad.hpp>
+#include <hydrogen/context/stack.hpp>
 
-#include <light/detail/stack_state.hpp>
+#include <hydrogen/context/detail/stack_state.hpp>
 
-namespace light {
+namespace hydrogen {
 
 class ExecutionContext {
  public:
@@ -19,4 +19,4 @@ class ExecutionContext {
   StackState state_;
 };
 
-}  // namespace light
+}  // namespace hydrogen

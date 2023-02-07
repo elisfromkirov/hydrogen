@@ -1,8 +1,8 @@
-#include <light/execution_context.hpp>
+#include <hydrogen/context/execution_context.hpp>
 
-#include <light/detail/trampoline.hpp>
+#include <hydrogen/context/detail/trampoline.hpp>
 
-namespace light {
+namespace hydrogen {
 
 ExecutionContext::ExecutionContext() noexcept
     : state_{nullptr} {
@@ -17,4 +17,4 @@ void ExecutionContext::SwitchTo(ExecutionContext& context) noexcept {
   SwitchStackState(&state_, &context.state_);
 }
 
-}  // namespace light
+}  // namespace hydrogen

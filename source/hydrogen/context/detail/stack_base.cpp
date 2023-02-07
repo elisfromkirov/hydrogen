@@ -1,11 +1,11 @@
-#include <light/detail/mmap.hpp>
-#include <light/detail/stack_base.hpp>
+#include <hydrogen/context/detail/mmap.hpp>
+#include <hydrogen/context/detail/stack_base.hpp>
 
-namespace light {
+namespace hydrogen {
 
 namespace detail {
 
-StackBase::StackBase(SizeType pages) noexcept
+StackBase::StackBase(crutch::SizeType pages) noexcept
     : data_{Map(pages * kPageSize)},
       bytes_{pages * kPageSize} {
 }
@@ -40,4 +40,4 @@ void StackBase::Swap(StackBase& other) noexcept {
 
 }  // namespace detail
 
-}  // namespace light
+}  // namespace hydrogen

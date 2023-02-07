@@ -1,17 +1,17 @@
 #pragma once
 
-#include <light/core.hpp>
+#include <crutch/core/core.hpp>
 
-namespace light {
+namespace hydrogen {
 
 namespace detail {
 
 class StackBase {
  public:
-  static constexpr SizeType kPageSize = 4096;
+  static constexpr crutch::SizeType kPageSize = 4096;
 
  public:
-  explicit StackBase(SizeType pages) noexcept;
+  explicit StackBase(crutch::SizeType pages) noexcept;
 
   StackBase(const StackBase& other) = delete;
   StackBase& operator=(const StackBase& other) = delete;
@@ -26,9 +26,9 @@ class StackBase {
 
  protected:
   void* data_;
-  SizeType bytes_;
+  crutch::SizeType bytes_;
 };
 
 }  // namespace detail
 
-}  // namespace light
+}  // namespace hydrogen

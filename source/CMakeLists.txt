@@ -1,18 +1,23 @@
-add_library(light)
+add_library(hydrogen)
 
-file(GLOB_RECURSE LIGHT_INCLUDE *.hpp)
-file(GLOB_RECURSE LIGHT_SOURCE *.cpp)
-file(GLOB_RECURSE LIGHT_ASSEMBLY *.s)
+file(GLOB_RECURSE HYDROGEN_INCLUDE *.hpp)
+file(GLOB_RECURSE HYDROGEN_SOURCE *.cpp)
+file(GLOB_RECURSE HYDROGEN_ASSEMBLY *.s)
 
-target_include_directories(light
+target_include_directories(hydrogen
     PUBLIC
         .
     )
 
-target_sources(light
+target_sources(hydrogen
     PUBLIC
-        ${LIGHT_INCLUDE}
+        ${HYDROGEN_INCLUDE}
     PRIVATE
-        ${LIGHT_SOURCE}
-        ${LIGHT_ASSEMBLY}
+        ${HYDROGEN_SOURCE}
+        ${HYDROGEN_ASSEMBLY}
+    )
+
+target_link_libraries(hydrogen
+    PUBLIC
+        crutch
     )

@@ -1,16 +1,16 @@
-add_executable(light_test)
+add_executable(hydrogen_tests)
 
-file(GLOB_RECURSE LIGHT_TESTS_INCLUDE *.hpp)
-file(GLOB_RECURSE LIGHT_TESTS_SOURCE *.cpp)
+file(GLOB_RECURSE HYDROGEN_TESTS_INCLUDE *.hpp)
+file(GLOB_RECURSE HYDROGEN_TESTS_SOURCE *.cpp)
 
-target_sources(light_test
+target_sources(hydrogen_tests
     PUBLIC
-        ${LIGHT_TESTS_INCLUDE}
+        ${HYDROGEN_TESTS_INCLUDE}
     PRIVATE
-        ${LIGHT_TESTS_SOURCE}
+        ${HYDROGEN_TESTS_SOURCE}
     )
 
-target_link_libraries(light_test
+target_link_libraries(hydrogen_tests
     PUBLIC
-        light
+        hydrogen
     )
