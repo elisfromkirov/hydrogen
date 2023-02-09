@@ -8,7 +8,7 @@ void InlineScheduler::Schedule(Thread* thread) noexcept {
   run_queue_.PushBack(thread);
 }
 
-void InlineScheduler::Dispatch() noexcept {
+void InlineScheduler::Dispatch() {
   while ((running_thread_ = PickNextThread()) != nullptr) {
     running_thread_->SwitchToThread();
   }

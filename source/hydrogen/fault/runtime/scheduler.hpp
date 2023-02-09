@@ -20,7 +20,7 @@ class IScheduler {
 
   virtual void Schedule(Thread* thread) noexcept = 0;
 
-  virtual void Dispatch() noexcept = 0;
+  virtual void Dispatch() = 0;
 
   virtual Thread* RunningThread() noexcept = 0;
 };

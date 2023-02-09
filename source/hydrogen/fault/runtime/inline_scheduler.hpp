@@ -13,7 +13,7 @@ class InlineScheduler final : public IScheduler {
  public:
   void Schedule(Thread* thread) noexcept override;
 
-  void Dispatch() noexcept override;
+  void Dispatch() override;
 
   Thread* RunningThread() noexcept override;
 

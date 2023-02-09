@@ -17,7 +17,7 @@ void Thread::Land() {
     function_();
     done_ = true;
   } catch (...) {
-    ABORT();
+    exception_ptr_ = ::std::current_exception();
   }
 
   SwitchToScheduler();

@@ -20,13 +20,14 @@ class AsymmetricTransfer {
 
   void SwitchToScheduler() noexcept;
 
-  void SwitchToThread() noexcept;
+  void SwitchToThread();
 
  protected:
   Stack stack_;
   Context context_;
   IScheduler* scheduler_;
   Context scheduler_context_;
+  ::std::exception_ptr exception_ptr_;
 };
 
 }  // namespace fault

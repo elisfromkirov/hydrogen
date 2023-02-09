@@ -2,8 +2,6 @@
 
 #ifdef FAULT_INJECTION
 
-#include <hydrogen/fault/inject/inject.hpp>
-
 namespace hydrogen {
 
 namespace fault {
@@ -32,7 +30,5 @@ void mutex::unlock() {
 }  // namespace fault
 
 }  // namespace hydrogen
-
-#else
 
 #endif

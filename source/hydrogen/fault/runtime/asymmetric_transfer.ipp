@@ -16,8 +16,11 @@ void AsymmetricTransfer<Thread>::SwitchToScheduler() noexcept  {
 }
 
 template <typename Thread>
-void AsymmetricTransfer<Thread>::SwitchToThread() noexcept {
+void AsymmetricTransfer<Thread>::SwitchToThread() {
   scheduler_context_.SwitchTo(context_);
+  if (exception_ptr_ != nullptr) {
+    ::std::rethrow_exception(exception_ptr_);
+  }
 }
 
 }  // namespace fault
