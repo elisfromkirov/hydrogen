@@ -1,4 +1,3 @@
-#include <hydrogen/fault/runtime/get_scheduler.hpp>
 #include <hydrogen/fault/runtime/mutex.hpp>
 
 namespace hydrogen {
@@ -15,6 +14,10 @@ void Mutex::Lock() noexcept {
     wait_queue_.Park();
   }
   locked_ = true;
+}
+
+bool Mutex::TryLock() noexcept {
+  return !::std::exchange(locked_, true);
 }
 
 void Mutex::Unlock() noexcept {

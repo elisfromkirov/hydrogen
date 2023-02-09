@@ -12,6 +12,8 @@ class Mutex {
 
   void Lock() noexcept;
 
+  bool TryLock() noexcept;
+
   void Unlock() noexcept;
 
  private:
