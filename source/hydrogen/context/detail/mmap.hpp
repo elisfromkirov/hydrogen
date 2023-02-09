@@ -6,9 +6,9 @@ namespace hydrogen {
 
 namespace detail {
 
-void* Map(crutch::SizeType bytes);
+void* Map(crutch::SizeType bytes) noexcept;
 
-void Unmap(void* data, crutch::SizeType bytes);
+void Unmap(void* data, crutch::SizeType bytes) noexcept;
 
 }  // namespace detail
 

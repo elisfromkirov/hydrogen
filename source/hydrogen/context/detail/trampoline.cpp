@@ -6,8 +6,8 @@ namespace hydrogen {
 
 namespace detail {
 
-void Trampoline(void*, void*, void*, void*, void*, void*, void* argument) {
-  auto landing_pad = reinterpret_cast<ILandingPad*>(argument);
+void Trampoline(void*, void*, void*, void*, void*, void*, void* arg) noexcept {
+  auto landing_pad = reinterpret_cast<ILandingPad*>(arg);
   landing_pad->Land();
 }
 

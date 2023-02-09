@@ -6,11 +6,12 @@ namespace hydrogen {
 
 namespace detail {
 
-void* Map(crutch::SizeType bytes) {
-  return mmap(nullptr, bytes, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+void* Map(crutch::SizeType bytes) noexcept {
+  return mmap(nullptr, bytes, PROT_READ | PROT_WRITE,
+              MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 }
 
-void Unmap(void* data, crutch::SizeType bytes) {
+void Unmap(void* data, crutch::SizeType bytes) noexcept {
   munmap(data, bytes);
 }
 
