@@ -1,12 +1,12 @@
 #pragma once
 
-#include <hydrogen/fault/detail/std/scheduler.hpp>
+#include <hydrogen/fault/detail/runtime/scheduler.hpp>
 
 namespace hydrogen {
 
 namespace detail {
 
-Scheduler* GetScheduler() noexcept;
+IScheduler* GetScheduler() noexcept;
 
 }  // namespace detail
 

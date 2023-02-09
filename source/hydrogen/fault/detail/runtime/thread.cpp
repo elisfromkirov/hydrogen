@@ -1,6 +1,6 @@
 #include <crutch/macro/abort.hpp>
 
-#include <hydrogen/fault/detail/std/thread.hpp>
+#include <hydrogen/fault/detail/runtime/thread.hpp>
 
 namespace hydrogen {
 
@@ -8,17 +8,14 @@ namespace detail {
 
 void Thread::Join() {
   while (!done_) {
-    // backoff
+    Yield();
   }
-}
-
-bool Thread::Done() const noexcept {
-  return done_;
 }
 
 void Thread::Land() {
   try {
     function_();
+    done_ = true;
   } catch (...) {
     ABORT();
   }
