@@ -1,6 +1,6 @@
-#include <hydrogen/fault/cond_var.hpp>
-#include <hydrogen/fault/mutex.hpp>
-#include <hydrogen/fault/thread.hpp>
+#include <hydrogen/fault/std/cond_var.hpp>
+#include <hydrogen/fault/std/mutex.hpp>
+#include <hydrogen/fault/std/thread.hpp>
 
 #include <hydrogen/fault/test/test_framework.hpp>
 

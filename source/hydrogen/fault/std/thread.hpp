@@ -1,6 +1,26 @@
 #pragma once
 
-#ifdef FAULT_INJECTION
+#if defined(FAULT_STD)
+
+#include <thread>
+
+namespace hydrogen {
+
+namespace fault {
+
+using thread = ::std::thread;
+
+namespace this_thread {
+
+void yield() noexcept;
+
+}  // namespace this_thread
+
+}  // namespace fault
+
+}  // namespace hydrogen
+
+#elif defined(FAULT_RUNTIME)
 
 #include <crutch/ptr/make_unique_ptr.hpp>
 #include <crutch/ptr/unique_ptr.hpp>
@@ -60,5 +80,5 @@ void yield() noexcept;
 #endif
 
 #define THREAD_IMPL
-#include <hydrogen/fault/thread.ipp>
+#include <hydrogen/fault/std/thread.ipp>
 #undef THREAD_IMPL

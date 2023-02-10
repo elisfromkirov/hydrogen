@@ -2,7 +2,9 @@
 #error Do not include this file directly
 #endif
 
-#ifdef FAULT_INJECTION
+#if defined(FAULT_STD)
+
+#elif defined(FAULT_RUNTIME)
 
 namespace hydrogen {
 

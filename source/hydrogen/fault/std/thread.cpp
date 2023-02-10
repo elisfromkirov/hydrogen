@@ -1,6 +1,24 @@
-#include <hydrogen/fault/thread.hpp>
+#include <hydrogen/fault/std/thread.hpp>
 
-#ifdef FAULT_INJECTION
+#if defined(FAULT_STD)
+
+namespace hydrogen {
+
+namespace fault {
+
+namespace this_thread {
+
+void yield() noexcept {
+  ::std::this_thread::yield();
+}
+
+}  // namespace this_thread
+
+}  // namespace fault
+
+}  // namespace hydrogen
+
+#elif defined(FAULT_RUNTIME)
 
 namespace hydrogen {
 

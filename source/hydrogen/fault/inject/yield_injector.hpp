@@ -18,17 +18,17 @@ class YieldInjector final : public IInjector {
   void MaybeInject() noexcept override;
 
  private:
+  static unsigned int UntilYield() noexcept;
+
+ private:
   [[nodiscard]]
-  bool NeedInject() const noexcept;
-
-  void Update() noexcept;
-
-  void Reset() noexcept;
+  bool NeedInject() noexcept;
 
   void Inject() noexcept;
 
+
  private:
-  unsigned int until_yield_;
+  std::atomic<unsigned int> until_yield_;
 };
 
 }  // namespace fault

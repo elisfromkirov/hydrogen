@@ -4,7 +4,7 @@
 
 #include <crutch/test/test_framework.hpp>
 
-#ifdef FAULT_INJECTION
+#if defined(FAULT_RUNTIME)
 
 #include <hydrogen/fault/runtime/get_scheduler.hpp>
 #include <hydrogen/fault/runtime/thread.hpp>
