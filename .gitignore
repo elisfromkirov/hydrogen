@@ -12,3 +12,6 @@ build/
 
 # MacOS specific files
 .DS_Store
+
+# Developer local machine build and test tool
+build.sh

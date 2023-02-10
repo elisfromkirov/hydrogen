@@ -29,7 +29,7 @@ Context::Context() noexcept
 Context::Context(Stack& stack, ILandingPad* landing_pad) noexcept
     : state_{stack.Top()},
       landing_pad_{landing_pad} {
-#if __has_feature(thread_sanitizer)
+#if __has_feature(address_sanitizer)
   bottom_ = stack.Bottom();
   size_ = stack.Size();
 #endif
@@ -64,7 +64,7 @@ void Context::SwitchTo(Context& context) noexcept {
 #endif
 
 #if __has_feature(thread_sanitizer)
-  __tsan_switch_to_fiber(tsan_fiber);
+  __tsan_switch_to_fiber(fiber_, 0);
 #endif
 
   SwitchStackState(&state_, &context.state_);
