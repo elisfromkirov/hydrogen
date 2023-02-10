@@ -1,8 +1,10 @@
-#include <hydrogen/context/landing_pad.hpp>
+#include <hydrogen/arch/context/landing_pad.hpp>
 
-#include <hydrogen/context/detail/trampoline.hpp>
+#include <hydrogen/arch/context/detail/trampoline.hpp>
 
 namespace hydrogen {
+
+namespace arch {
 
 namespace detail {
 
@@ -12,5 +14,7 @@ void Trampoline(void*, void*, void*, void*, void*, void*, void* arg) noexcept {
 }
 
 }  // namespace detail
+
+}  // namespace arch
 
 }  // namespace hydrogen

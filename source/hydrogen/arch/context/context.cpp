@@ -1,6 +1,6 @@
-#include <hydrogen/context/context.hpp>
+#include <hydrogen/arch/context/context.hpp>
 
-#include <hydrogen/context/detail/trampoline.hpp>
+#include <hydrogen/arch/context/detail/trampoline.hpp>
 
 #if __has_feature(address_sanitizer)
 #include <sanitizer/asan_interface.h>
@@ -11,6 +11,8 @@
 #endif
 
 namespace hydrogen {
+
+namespace arch {
 
 Context::Context() noexcept
     : state_{nullptr},
@@ -43,7 +45,7 @@ Context::Context(Stack& stack, ILandingPad* landing_pad) noexcept
 }
 
 #if __has_feature(thread_sanitizer)
-Context::~Context() noexcept {
+Context::~Context() {
   if (owns_) {
     __tsan_destroy_fiber(fiber_);
   }
@@ -81,5 +83,7 @@ void Context::Land() {
 
   landing_pad_->Land();
 }
+
+}  // namespace arch
 
 }  // namespace hydrogen

@@ -9,9 +9,9 @@ namespace hydrogen {
 
 namespace fault {
 
-class Thread final : public ::crutch::IntrusiveNode<Thread>,
+class Thread final : public crutch::IntrusiveNode<Thread>,
                      public AsymmetricTransfer<Thread>,
-                     public ILandingPad {
+                     public arch::ILandingPad {
  public:
   template <typename Function>
   explicit Thread(Function&& function);
@@ -21,7 +21,7 @@ class Thread final : public ::crutch::IntrusiveNode<Thread>,
   void Land() override;
 
  private:
-  ::crutch::UniqueFunction<void()> function_;
+  crutch::UniqueFunction<void()> function_;
   bool done_;
 };
 

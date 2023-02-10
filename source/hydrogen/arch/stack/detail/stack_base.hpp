@@ -4,6 +4,8 @@
 
 namespace hydrogen {
 
+namespace arch {
+
 namespace detail {
 
 class StackBase {
@@ -30,5 +32,7 @@ class StackBase {
 };
 
 }  // namespace detail
+
+}  // namespace arch
 
 }  // namespace hydrogen

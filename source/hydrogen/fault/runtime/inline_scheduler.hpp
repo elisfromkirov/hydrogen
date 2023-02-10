@@ -22,7 +22,7 @@ class InlineScheduler final : public IScheduler {
 
  private:
   Thread* running_thread_;
-  ::crutch::IntrusiveList<Thread> run_queue_;
+  crutch::IntrusiveList<Thread> run_queue_;
 };
 
 }  // namespace fault

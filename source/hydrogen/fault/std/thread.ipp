@@ -12,7 +12,7 @@ namespace fault {
 
 template <typename Function>
 thread::thread(Function&& function)
-    : impl_{::crutch::MakeUniquePtr<Thread>(::std::forward<Function>(function))} {
+    : impl_{crutch::MakeUniquePtr<Thread>(::std::forward<Function>(function))} {
 }
 
 }  // namespace fault

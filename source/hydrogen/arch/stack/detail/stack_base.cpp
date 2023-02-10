@@ -1,7 +1,9 @@
-#include <hydrogen/context/detail/mmap.hpp>
-#include <hydrogen/context/detail/stack_base.hpp>
+#include <hydrogen/arch/stack/detail/mmap.hpp>
+#include <hydrogen/arch/stack/detail/stack_base.hpp>
 
 namespace hydrogen {
+
+namespace arch {
 
 namespace detail {
 
@@ -39,5 +41,7 @@ void StackBase::Swap(StackBase& other) noexcept {
 }
 
 }  // namespace detail
+
+}  // namespace arch
 
 }  // namespace hydrogen

@@ -1,12 +1,5 @@
 #pragma once
 
-#include <hydrogen/context/landing_pad.hpp>
-#include <hydrogen/context/stack.hpp>
-
-#include <hydrogen/context/detail/stack_state.hpp>
-
-namespace hydrogen {
-
 // Boost activation context implementation
 //   https://github.com/boostorg/context/blob/develop/include/boost/context/fiber_ucontext.hpp#L84
 //
@@ -30,6 +23,15 @@ namespace hydrogen {
 // in https://github.com/llvm/llvm-project/blob/main/compiler-rt/include/sanitizer/common_interface_defs.h
 // or https://github.com/llvm/llvm-project/blob/main/compiler-rt/include/sanitizer/asan_interface.h
 
+#include <hydrogen/arch/context/landing_pad.hpp>
+#include <hydrogen/arch/stack/stack.hpp>
+
+#include <hydrogen/arch/context/detail/stack_state.hpp>
+
+namespace hydrogen {
+
+namespace arch {
+
 class Context : private ILandingPad {
  public:
   Context() noexcept;
@@ -37,7 +39,7 @@ class Context : private ILandingPad {
   Context(Stack& stack, ILandingPad* landing_pad) noexcept;
 
 #if __has_feature(thread_sanitizer)
-  ~Context() noexcept;
+  ~Context() override;
 #endif
 
   void SwitchTo(Context& context) noexcept;
@@ -60,5 +62,7 @@ class Context : private ILandingPad {
   bool owns_;
 #endif
 };
+
+}  // namespace arch
 
 }  // namespace hydrogen

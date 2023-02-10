@@ -1,6 +1,8 @@
-#include "stack.hpp"
+#include <hydrogen/arch/stack/stack.hpp>
 
 namespace hydrogen {
+
+namespace arch {
 
 Stack::Stack(crutch::SizeType pages) noexcept
     : detail::StackBase{pages} {
@@ -22,4 +24,6 @@ void* Stack::Top() const noexcept {
   return reinterpret_cast<crutch::Byte*>(data_) + bytes_;
 }
 
-}  // namespace context
+}  // namespace arch
+
+}  // namespace hydrogen

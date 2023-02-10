@@ -2,9 +2,10 @@
 
 #include <crutch/function/unique_function.hpp>
 
-#include <hydrogen/context/landing_pad.hpp>
-#include <hydrogen/context/stack.hpp>
-#include <hydrogen/context/context.hpp>
+#include <hydrogen/arch/context/landing_pad.hpp>
+#include <hydrogen/arch/context/context.hpp>
+
+#include <hydrogen/arch/stack/stack.hpp>
 
 #include <hydrogen/fault/runtime/get_scheduler.hpp>
 #include <hydrogen/fault/runtime/scheduler.hpp>
@@ -23,10 +24,10 @@ class AsymmetricTransfer {
   void SwitchToThread();
 
  protected:
-  Stack stack_;
-  Context context_;
+  arch::Stack stack_;
+  arch::Context context_;
   IScheduler* scheduler_;
-  Context scheduler_context_;
+  arch::Context scheduler_context_;
   ::std::exception_ptr exception_ptr_;
 };
 

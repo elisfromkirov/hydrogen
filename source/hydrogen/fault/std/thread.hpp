@@ -33,7 +33,7 @@ namespace fault {
 
 class thread {
  public:
-  using thread_impl = ::crutch::UniquePtr<Thread>;
+  using thread_impl = crutch::UniquePtr<Thread>;
 
  public:
   template <typename Function>

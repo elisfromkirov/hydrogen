@@ -12,13 +12,13 @@
 #define FAULT_TEST_IMPL(TestRoutine, Test, name, kTestFactory) \
   void TestRoutine();                                          \
                                                                \
-  class Test : public ::crutch::ITest {                        \
+  class Test : public crutch::ITest {                        \
    public:                                                     \
-    ::crutch::StringView Name() const noexcept override {      \
-      return ::crutch::StringView{name};                       \
+    crutch::StringView Name() const noexcept override {      \
+      return crutch::StringView{name};                       \
     }                                                          \
                                                                \
-    ::crutch::StringView Suite() const noexcept override {     \
+    crutch::StringView Suite() const noexcept override {     \
       return kSuite.Name();                                    \
     }                                                          \
                                                                \
@@ -30,7 +30,7 @@
     }                                                          \
   };                                                           \
                                                                \
-  static ::crutch::TestFactory<Test> kTestFactory{kSuite};     \
+  static crutch::TestFactory<Test> kTestFactory{kSuite};     \
                                                                \
   void TestRoutine()
 
@@ -43,13 +43,13 @@
 #define FAULT_TEST_IMPL(TestRoutine, Test, name, kTestFactory) \
   void TestRoutine();                                          \
                                                                \
-  class Test : public ::crutch::ITest {                        \
+  class Test : public crutch::ITest {                        \
    public:                                                     \
-    ::crutch::StringView Name() const noexcept override {      \
-      return ::crutch::StringView{name};                       \
+    crutch::StringView Name() const noexcept override {      \
+      return crutch::StringView{name};                       \
     }                                                          \
                                                                \
-    ::crutch::StringView Suite() const noexcept override {     \
+    crutch::StringView Suite() const noexcept override {     \
       return kSuite.Name();                                    \
     }                                                          \
                                                                \
@@ -58,7 +58,7 @@
     }                                                          \
   };                                                           \
                                                                \
-  static ::crutch::TestFactory<Test> kTestFactory{kSuite};     \
+  static crutch::TestFactory<Test> kTestFactory{kSuite};     \
                                                                \
   void TestRoutine()
 

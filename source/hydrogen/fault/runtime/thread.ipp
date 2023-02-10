@@ -8,7 +8,7 @@ namespace fault {
 
 template <typename Function>
 Thread::Thread(Function&& function)
-    : ::crutch::IntrusiveNode<Thread>{},
+    : crutch::IntrusiveNode<Thread>{},
       AsymmetricTransfer<Thread>{},
       function_{std::forward<Function>(function)},
       done_{false} {
